@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health and Fitness Tracker</title>
+    <link rel="stylesheet" href="/Exercisefolder/StyleE.css">
+    <style>
+        .container {
+            background: rgba(0, 0, 0, 0);
+            padding-left: 25%;
+            padding-top: 10%;
+            width: 50%;
+            text-align: center;
+            color: rgb(0, 0, 0);
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+  <header>
+      <div class="logo">
+          <img src="/Images/logo.png" alt="FlexCore Balance Logo">
+          <h1>FlexCore Balance</h1>
+      </div>
+      <nav>
+          <ul>
+            <li><a href="/main.html">Home</a></li>
+            <li><a href="/BMI/index.html">BMI Calculator</a></li>
+            <li><a href="/calorie/Exp.html">Burnt Calories Calc</a></li>
+            <li><a href="/Index/Exercise.html">Exercise</a></li>
+            <li><a href="/Index/Recipie.html">Recipes</a></li>
+            <li><a href="/Quest/templates/index.html">Quests</a></li>
+            <li><a href="/profile/profile.html">View Profile</a></li>
+            <li><a href="/Quest/templates/index.html">Quests</a></li>
+          </ul>
+      </nav>
+  </header>
+<body>
+    <div class="container">
+        <h1>Health and Fitness Tracker</h1>
+        <div class="input-group">
+            <label for="steps">Steps taken:</label>
+            <input type="number" id="steps" placeholder="Enter steps">
+        </div>
+        <div class="input-group">
+            <label for="distance">Distance (km):</label>
+            <input type="number" id="distance" placeholder="Enter distance">
+        </div>
+        <button id="trackButton">Track Activity</button>
+        <div class="result" id="resultLabel"></div>
+    </div>
+
+    <script>
+        document.getElementById('trackButton').addEventListener('click', () => {
+            const steps = parseInt(document.getElementById('steps').value, 10) || 0;
+            const distance = parseFloat(document.getElementById('distance').value) || 0;
+
+            // Perform calculations to estimate calories burned
+            const caloriesBurned = calculateCaloriesBurned(steps, distance);
+
+            // Display the results to the user
+            document.getElementById('resultLabel').textContent = `Calories Burned: ${caloriesBurned.toFixed(2)}`;
+        });
+
+        function calculateCaloriesBurned(steps, distance) {
+            const caloriesPerStep = 0.04; // Sample value
+            const caloriesPerDistance = 0.1; // Sample value
+            return (steps * caloriesPerStep) + (distance * caloriesPerDistance);
+        }
+    </script>
+</body>
+</html>

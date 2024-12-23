@@ -1,0 +1,82 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    background-color: white;
+    position: relative;
+    font-family: sans-serif,roboto;
+}
+.navbar{
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 4%;
+    background: gray;
+    z-index: 9;
+    display: flex;
+    align-items: flex-start;
+}
+.Logo{
+    padding-top: 20px;
+    height: 70px;
+}
+.nav-links{
+    margin-top: 10px;
+    display: flex;
+    list-style: none;
+}
+.navitems{
+    padding-top: 20px;
+    text-decoration: none;
+    text-size-adjust: 30px;
+    margin-left: 50px;
+    align-self: center;
+    text-transform: capitalize;
+    color: #dd1b1b;
+    opacity: 0.9;
+}
+.right-container{
+    display: block;
+    margin-left: auto;
+}
+.Login{
+    padding-top: 20px;
+    background-color: white;
+    border-color: black;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.Signup{
+    margin-top: 20px;
+    background-color: white;
+    border-color: black;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.heading{
+    padding-top: 110px;
+    padding-left: 4%;
+}
+.bodypage{
+    padding-top: 20px;
+    padding-left: 40px;
+    align-items: center;
+    width: 80%;
+}
+.user{
+    width: 150px;
+    align-items: center;
+    border-color: black;
+}
